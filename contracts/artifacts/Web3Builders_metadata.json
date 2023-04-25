@@ -131,6 +131,25 @@
 				"type": "event"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "allowList",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "allowListMint",
 				"outputs": [],
@@ -387,6 +406,19 @@
 					}
 				],
 				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "addresses",
+						"type": "address[]"
+					}
+				],
+				"name": "setAllowList",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -783,11 +815,11 @@
 			]
 		},
 		"contracts/Web3Builders.sol": {
-			"keccak256": "0x053e631a74859869840bc71b43f51575b0710511d863848bc2cc46e349340ebb",
+			"keccak256": "0x75c0259f4701ab6455ceee8212ba88ed192d294a4c82755558390726015bb5be",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7dd3bbc8d5b65d759bbe6b264c25fbadccf92974b991fb09bb3df49780aefd78",
-				"dweb:/ipfs/QmeiuxJ8LxoDSxTfF3AC9kvjnfWMzBj5cqNo61PZrQmhAK"
+				"bzz-raw://3d02c53fd1b7fbfa8438d62c298ed794a055b627933f69ae059b5a8d615902f0",
+				"dweb:/ipfs/QmWLMEDcjkQu4gQsYg3YaTQjN6AcoPPLvh8AhRqar7LVR4"
 			]
 		}
 	},
