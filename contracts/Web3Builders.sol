@@ -48,10 +48,7 @@ contract Web3Builders is ERC721, ERC721Enumerable, Pausable, Ownable {
         //check if the user is in the allowList
         require(allowList[msg.sender], "You are not on the allow list");
         require(msg.value == 0.001 ether, "Not Enough Funds");
-        require(totalSupply() < maxSupply, "We sold out!");
-        uint256 tokenId = _tokenIdCounter.current();
-        _tokenIdCounter.increment();
-        _safeMint(msg.sender, tokenId);
+        internalMint();
     }
 
     //Add payment
@@ -60,6 +57,11 @@ contract Web3Builders is ERC721, ERC721Enumerable, Pausable, Ownable {
     function publicMint() public payable{
         require(publicMintOpen, "Public Mint Closed");
         require(msg.value == 0.01 ether, "Not Enough Funds");
+        internalMint();
+    }
+
+    //Code cleanup, shared features
+    function internalMint() internal {
         require(totalSupply() < maxSupply, "We sold out!");
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
