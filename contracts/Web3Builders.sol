@@ -68,6 +68,13 @@ contract Web3Builders is ERC721, ERC721Enumerable, Pausable, Ownable {
         _safeMint(msg.sender, tokenId);
     }
 
+    //Only the owner can withdraw
+    function withdraw(address _addr) external onlyOwner {
+        //get the balance of the contract
+        uint256 balance = address(this).balance;
+        payable(_addr).transfer(balance);
+    }
+
     //Populate the allowList
     function setAllowList(address[] calldata addresses) external onlyOwner {
         for(uint256 i = 0; i < addresses.length; i++ ){
